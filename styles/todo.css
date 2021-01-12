@@ -1,18 +1,54 @@
 body {
     background-color: #1D1D1D;
     margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 header {
     background-color: #73069E;
     padding: 30px;
     color: #FFFFFF;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 2em;
     font-weight: 700;
     box-shadow: 0px 10px 5px #4E046B;
     -webkit-box-shadow: 0px 10px 5px #4E046B;
     -moz-box-shadow: 0px 10px 5px #4E046B;
     position: relative;
-    z-index: 999999
+    z-index: 999999;
+}
+
+.content {
+    width: 80vw;
+    margin: 50px auto;
+}
+
+.content__task-cards {
+    margin-top: 30px;
+}
+
+.card {
+    border-radius: 15px;
+    background-color: #2D2D2D;
+    color: #F0F0F0;
+    display: flex;
+    padding: 5px 15px;
+    margin: 0;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card .task-label{
+    border-radius: 15px;
+    display: flex;
+    justify-items: flex-end;
+}
+
+.label-university {
+    background-color: #b39700;
+    padding: 3px 10px;
+}
+
+.label-independent {
+    background-color: #2955C0;
+    padding: 3px 10px;
 }

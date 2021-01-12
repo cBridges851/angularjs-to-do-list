@@ -4,9 +4,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/todo.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="./app/app.js"></script>
     <title>Chrispy To Do!</title>
 </head>
-<body>
+<body ng-app="todoApp" ng-controller="todoAppController">
     <header>Chrispy To-Do!</header>
+    <div class="content">
+        <div class="content__task-cards" ng-repeat="task in tasks">
+            <div class="card">
+                <p>{{task.name}}</p>
+                <p class="task-label {{task.labelClass}}">{{task.label}}</p>
+            </div>
+            
+        </div>
+    </div>
 </body>
 </html>
