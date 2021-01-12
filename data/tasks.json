@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Make to-do list application in AngularJS",
+        "label": "Independent Learning",
+        "complete": false
+    },
+    {
+        "name": "Make a code style checker",
+        "label": "University",
+        "complete": false
+    }
+]
