@@ -33,4 +33,9 @@ todoApp.controller("todoAppController", ["$scope", function ($scope) {
             "complete": false        
         });
     }
+
+    $scope.completeTask = function(task, complete) {
+        const selectedTask = $scope.tasks[$scope.tasks.indexOf(task)]
+        selectedTask.complete = complete
+    }
 }])

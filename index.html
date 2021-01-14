@@ -18,7 +18,7 @@
                             placeholder="Add New Task"
                             ng-model = "newTask.name"></input>
                     <select ng-model="newTask.label" placeholder="Category">
-                        <option value="" disabled selected>Category</option>
+                        <option disabled selected>Category</option>
                         <option ng-repeat="task in tasks|unique: 'label'">{{task.label}}</option>
                     </select>
                 </div>
@@ -28,7 +28,13 @@
         <div class="content__task-cards" ng-repeat="task in tasks">
             <div class="card">
                 <p>{{task.name}}</p>
-                <p class="task-label {{task.labelClass}}">{{task.label}}</p>
+                <div class="card__right">
+                    <p class="task-label {{task.labelClass}}">{{task.label}}</p>
+                    <input class="task-cards__checkbox" 
+                            type="checkbox"
+                            ng-model="task.complete"
+                            ng-change="completeTask(task, task.complete)"></input>
+                </div>
             </div>
             
         </div>
