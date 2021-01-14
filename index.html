@@ -11,15 +11,15 @@
 <body ng-app="todoApp" ng-controller="todoAppController">
     <header>Chrispy To-Do!</header>
     <div class="content">
+        <h2>All Tasks</h2>
         <div class="card content__new-task">
             <form ng-submit="addNewTask()">
                 <div class="new-task__entry">
                     <input type="text"
                             placeholder="Add New Task"
                             ng-model = "newTask.name"></input>
-                    <select ng-model="newTask.label" placeholder="Category">
-                        <option disabled selected>Category</option>
-                        <option ng-repeat="task in tasks|unique: 'label'">{{task.label}}</option>
+                    <select ng-model="newTask.label">
+                        <option ng-repeat="label in labelObject|unique: 'name'">{{label.name}}</option>
                     </select>
                 </div>
                 <button>+</button>
@@ -34,6 +34,7 @@
                             type="checkbox"
                             ng-model="task.complete"
                             ng-change="completeTask(task, task.complete)"></input>
+                    <button ng-click="deleteTask(task)"></button>
                 </div>
             </div>
             

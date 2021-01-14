@@ -17,9 +17,19 @@ header {
     z-index: 999999;
 }
 
+button {
+    cursor: pointer;
+}
+
 .content {
     width: 80vw;
     margin: 50px auto;
+}
+
+h2 {
+    color: #FFFFFF;
+    font-size: 1.8em;
+    text-align: center;
 }
 
 .content__task-cards {
@@ -105,4 +115,15 @@ select {
 
 .card__right .task-label {
     margin-right: 10px;
+}
+
+.card__right button {
+    margin-top: 4px;
+    background-color: transparent;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAvGFbAvMENCjnvCpuTXcneORSSJibzRANJw&usqp=CAU");
+    background-size: contain;
+    width: 49px;
+    height: 49px;
+    border: none;
+    cursor: pointer;
 }
