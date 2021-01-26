@@ -1,0 +1,33 @@
+<h2>All Tasks</h2>
+        <div class="content__finding">
+            <div class="finding__filter">
+                <button ng-click="order='label'">ORDER BY CATEGORY</button>
+                <button ng-click="order='name'">ORDER ALPHABETICALLY</button>
+            </div>
+        </div>
+        <div class="card content__new-task">
+            <form ng-submit="addNewTask()">
+                <div class="new-task__entry">
+                    <input type="text"
+                            placeholder="Add New Task"
+                            ng-model = "newTask.name"></input>
+                    <select ng-model="newTask.label">
+                        <option ng-repeat="label in labelObject|unique: 'name'">{{label.name}}</option>
+                    </select>
+                </div>
+                <button>+</button>
+            </form>
+        </div>
+        <div class="content__task-cards" ng-repeat="task in tasks | filter:search | orderBy:order">
+            <div class="card">
+                <p>{{task.name}}</p>
+                <div class="card__right">
+                    <p class="task-label {{task.labelClass}}">{{task.label}}</p>
+                    <input class="task-cards__checkbox" 
+                            type="checkbox"
+                            ng-model="task.complete"
+                            ng-change="completeTask(task, task.complete)"></input>
+                    <button ng-click="deleteTask(task)"></button>
+                </div>
+            </div>
+        </div>
